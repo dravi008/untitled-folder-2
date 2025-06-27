@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlightDebriefAI - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+        <!-- Logo and Title -->
+        <div class="text-center mb-8">
+            <img src="logo.png" alt="FlightDebriefAI Logo" class="w-28 mx-auto mb-4 rounded-xl shadow-md">
+            <h1 class="text-3xl font-bold text-gray-900">FlightDebriefAI</h1>
+            <p class="text-gray-600 mt-2">Smart flight instruction debriefs</p>
+        </div>
+        <!-- Decorative plane image -->
+        <div class="text-center mb-6">
+            <img src="https://openmoji.org/data/color/svg/1F6E9.svg" alt="Plane Illustration" class="w-20 h-20 mx-auto opacity-80">
+        </div>
+
+        <!-- Login Form -->
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Welcome Back</h2>
+            
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                        placeholder="Enter your email"
+                    >
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                        placeholder="Enter your password"
+                    >
+                </div>
+                
+                <button 
+                    type="submit"
+                    class="w-full bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105"
+                >
+                    Sign In
+                </button>
+            </form>
+            
+            <div class="mt-6 text-center">
+                <p class="text-gray-600">
+                    Don't have an account? 
+                    <a href="signup.html" class="text-primary hover:text-secondary font-medium">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate loading
+            const button = e.target.querySelector('button');
+            const originalText = button.textContent;
+            button.textContent = 'Signing in...';
+            button.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1500);
+        });
+    </script>
+</body>
+</html> 
