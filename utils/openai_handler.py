@@ -1,0 +1,2 @@
+def generate_dummy_debrief(student_name, phase, maneuver_ratings, notes):
+    return f"AI Debrief for {student_name} ({phase}):\n\nWhat went well: Good progress.\nWhat to improve: Practice more maneuvers.\nNext flight: Focus on weak areas.\nNotes: {notes}" 
