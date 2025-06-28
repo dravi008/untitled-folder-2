@@ -1,8 +1,9 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
-openai.api_key = os.environ.get("OPENAI_API_KEY")
-DATABASE_URL = os.environ.get("DATABASE_URL")
-JWT_SECRET = os.environ.get("JWT_SECRET")
+import openai
+from flask import Flask, render_template, request, jsonify
 # --- Flask setup ---
 app = Flask(__name__, template_folder="FlightDebriefAI/templates")
 
@@ -37,6 +38,5 @@ def dashboard():
     return render_template('dashboard.html')
 
 if __name__ == "__main__":
-    import os
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port, debug=True)
